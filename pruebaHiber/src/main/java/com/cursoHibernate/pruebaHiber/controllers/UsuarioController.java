@@ -20,18 +20,6 @@ public class UsuarioController {
     @Autowired
     private JWTUtil jwtUtil;
 
-    @RequestMapping(value = "api/usuarios/{id}")
-    public Usuario getUsuario(@PathVariable long id){
-        Usuario usuario = new Usuario("Liliana", "Rivas","lili97@hotmail.com","654338971");
-        usuario.setId(id);
-        return usuario;
-    }
-
-    /*@RequestMapping(value = "api/usuarios")
-    public List<Usuario> getUsuario(){
-        return usuarioDao.getUsuario();
-    }*/
-
     @RequestMapping(value = "api/usuarios", method = RequestMethod.GET)
     public List<Usuario> getUsuario(@RequestHeader(value="Authorization") String token){
 
@@ -63,8 +51,6 @@ public class UsuarioController {
         Usuario u = new Usuario();
         return u;
     }
-
-
 
     @RequestMapping(value = "api/usuarios/{id}", method = RequestMethod.DELETE)
     public void eliminar(@PathVariable long id, @RequestHeader(value="Authorization") String token){
