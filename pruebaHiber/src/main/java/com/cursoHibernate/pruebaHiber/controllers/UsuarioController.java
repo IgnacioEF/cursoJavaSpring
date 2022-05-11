@@ -48,8 +48,8 @@ public class UsuarioController {
 
     @RequestMapping(value = "api/Usuario1")
     public Usuario editar(){
-        Usuario u = new Usuario();
-        return u;
+        Usuario usuario = new Usuario();
+        return usuario;
     }
 
     @RequestMapping(value = "api/usuarios/{id}", method = RequestMethod.DELETE)
